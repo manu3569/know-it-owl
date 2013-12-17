@@ -1,24 +1,31 @@
 $(function(){
 
-  var help_displayed = false;
+  /* Help Menu Configuration Options */
+
+  var help_menu_width = 320;
+  var help_menu_slide_out_time = 1000;
+  var help_text_crossfade_time = 200;
+
+
+
 
   /* Set the width of the help menu bar */
-  var help_menu_width = 320;
 
+  var help_displayed = false;
+  var current_help_text_id = null;
 
 
   /* Ensure that the help menu is as tall as the document */
 
-  $('.slide-out-help').css('height', $(document).height());
+  $('#slide-out-help').css('height', $(document).height());
 
 
 
   /* Show sidebar when question mark icon is clicked */
 
-  $('.help-button').on('click', 1500, function(){
-    help_menu_id = $(this).attr("href");
-    help_menu = $(help_menu_id);
-    toggle_sidebar(help_menu);
+  $('.help-button').on('click', help_menu_slide_out_time, function(){
+    help_text_id = $(this).attr("href").substring(1);
+    toggle_help_text(help_text_id);
   });
 
 
@@ -26,7 +33,7 @@ $(function(){
   /* Dismiss sidebar when arrow icon is pressed */
 
   $('.dismiss-arrow').on('click', function(){
-    toggle_sidebar($(this).parent().parent());
+    toggle_help_text($(this).parent().attr("id"));
   });
 
 
@@ -45,12 +52,46 @@ $(function(){
   $('.form-section.active input').focus();
 
 
+
   /*** Helper Functions ***/
 
-  function toggle_sidebar(sidebar) {
-    resizing_operation = help_displayed ? "-=" : "+=";
-    sidebar.animate({ width: resizing_operation + help_menu_width });
-    help_displayed = !help_displayed
+  function toggle_help_text(help_text_id) {
+
+    help_text = $('#'+help_text_id);
+    sidebar = help_text.parent();
+
+    if (help_displayed) {
+      if (current_help_text_id == help_text_id) {
+        // hide menu
+        sidebar.animate(
+          { width: "-=" + help_menu_width },
+          'swing',
+          function(){
+            help_text.hide();
+          }
+        );
+        help_displayed = !help_displayed;
+        current_help_text_id = null;
+      } else {
+        swap_help_texts(current_help_text_id, help_text_id);
+        current_help_text_id = help_text_id;
+      }
+
+    } else {
+      // show menu
+      help_text.show();
+      sidebar.animate({ width: "+=" + help_menu_width });
+      help_displayed = !help_displayed;
+      current_help_text_id = help_text_id;
+    }
+
+  }
+
+
+  function swap_help_texts(before_id, after_id) {
+    $('#' + before_id).fadeOut(help_text_crossfade_time, function(){
+      $('#' + after_id).fadeIn(help_text_crossfade_time);
+    });
   }
 
 });

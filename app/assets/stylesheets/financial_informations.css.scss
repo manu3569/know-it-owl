@@ -2,7 +2,7 @@ body {
   background: #66c8c9;
 }
 
-.slide-out-help {
+#slide-out-help {
   background: #005c5b;
   color: #f5ffff;
   display: block;
@@ -11,11 +11,13 @@ body {
   top: 0px;
   position: absolute;
   width: 0px;
+  overflow: hidden;
   z-index: 20000;
 
   &>div {
     padding: 70px 40px;
     width: 320px;
+    display: none;
   }
 
   .money-bag {
@@ -113,6 +115,10 @@ body {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+
+    &:hover {
+      background: #19a3a5;
+    };
   }
 
   .active {
