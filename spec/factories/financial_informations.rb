@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :financial_information do
-    income 1
-    savings 1
-    retirement 1
+    income 12300000
+    savings 1000000
+    retirement 50000000
   end
 end

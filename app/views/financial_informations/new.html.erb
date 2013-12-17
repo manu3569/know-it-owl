@@ -1,0 +1,14 @@
+<%= form_for(@financial_information) do |f| %>
+
+  <%= f.label :income %>
+  <%= f.text_field :income %>
+  
+  <%= f.label :savings %>
+  <%= f.text_field :savings %>
+  
+  <%= f.label :retirement %>
+  <%= f.text_field :retirement %>
+
+  <%= f.submit "Get Recommendation" %>
+
+<% end %>

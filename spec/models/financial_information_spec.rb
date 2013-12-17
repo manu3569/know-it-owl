@@ -6,7 +6,7 @@ describe FinancialInformation do
   let(:savings) { 3000000 }
   let(:retirement) { 8000000 }
 
-  let(:tax_rate) { 0.3 }
+  let(:tax_rate) { TAX_RATE }
   
   let(:life_insurance_recommendation) do
     income * 10 * (1 - tax_rate) - (savings + retirement)
