@@ -1,14 +1,57 @@
-<%= form_for(@financial_information) do |f| %>
+<div id="financial_informations_new" class="row collapse">
+  <div class="columns small-10 large-6">
 
-  <%= f.label :income %>
-  <%= f.text_field :income %>
-  
-  <%= f.label :savings %>
-  <%= f.text_field :savings %>
-  
-  <%= f.label :retirement %>
-  <%= f.text_field :retirement %>
+    <h1>Income & Savings First...</h1>
 
-  <%= f.submit "Get Recommendation" %>
 
-<% end %>
+    <%= form_for(@financial_information) do |f| %>
+
+      <div class="form-section active">
+        <%= f.label :income, "Total Annual Income" %>
+        <i class="fa fa-question-circle"></i>
+
+        <div class="row collapse">
+          <div class="columns small-2 large-2">
+            <span class="prefix">$</span>
+          </div>
+          <div class="columns small-10 large-10">
+            <%= f.text_field :income %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <%= f.label :savings, "Savings" %>
+        <i class="fa fa-question-circle"></i>
+
+        <div class="row collapse">
+          <div class="columns small-2 large-2">
+            <span class="prefix">$</span>
+          </div>
+          <div class="columns small-10 large-10">
+            <%= f.text_field :savings %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <%= f.label :retirement, "Saved for Retirement?" %>
+        <i class="fa fa-question-circle"></i>
+
+        <div class="row collapse">
+          <div class="columns small-2 large-2">
+            <span class="prefix">$</span>
+          </div>
+          <div class="columns small-10 large-10">
+            <%= f.text_field :retirement %>
+          </div>
+        </div>
+      </div>
+
+
+      <%= f.submit "Get Recommendation" %>
+
+    <% end %>
+
+  </div>
+</div>
