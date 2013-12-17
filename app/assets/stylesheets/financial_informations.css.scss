@@ -2,6 +2,20 @@ body {
   background: #66c8c9;
 }
 
+.sidr-menu {
+  background: #005c5b;
+  color: #f5ffff;
+  width: 30%;
+  
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  .money-bag {
+    color: #007b79;
+  }
+}
+
 #financial_informations_new {
 
   padding: 80px 0px;
