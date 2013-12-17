@@ -6,6 +6,8 @@ Create a simple Rails application that collects a user’s financial information
 
 A basic form shall allow input of a user’s Total Annual Income, Current Savings and Retirement Savings. This information shall be persisted so that we can begin to benchmark our users against their peers. The form should look similar to the screenshot below:
 
+[image omitted]
+
 ###Displaying the Recommendation
 
 Upon submission of the form, the application shall display the recommended life insurance amount to the user as text. eg “You should get $123,000 in life insurance”. If you wish, you may choose to implement this as an AJAX form so that the user never has to leave the page.
@@ -16,10 +18,14 @@ You can assume a tax rate of 30%.
 ###Off Canvas Help
 
 Each form element is accompanied by a small help icon. When the user clicks the help icon, an off-canvas message should appear (some simple animation would be awesome!) as shown below:
+
+[image omitted]
+
+
 Hint: here are some examples of the effect
 
 * http://www.berriart.com/sidr
-* http://christopheryee.ca/pushy￼￼￼
+* http://christopheryee.ca/pushy
 
 
 ##Asking for help
