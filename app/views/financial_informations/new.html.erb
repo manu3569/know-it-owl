@@ -8,7 +8,7 @@
 
       <div class="form-section active">
         <%= f.label :income, "Total Annual Income" %>
-        <i class="fa fa-question-circle"></i>
+        <a id="income-help-button" href="#income-help"><i class="fa fa-question-circle"></i></a>
 
         <div class="row collapse">
           <div class="columns small-2 large-2">
@@ -22,7 +22,7 @@
 
       <div class="form-section">
         <%= f.label :savings, "Savings" %>
-        <i class="fa fa-question-circle"></i>
+        <a id="savings-help-button" href="#savings-help"><i class="fa fa-question-circle"></i></a>
 
         <div class="row collapse">
           <div class="columns small-2 large-2">
@@ -36,7 +36,7 @@
 
       <div class="form-section">
         <%= f.label :retirement, "Saved for Retirement?" %>
-        <i class="fa fa-question-circle"></i>
+        <a id="retirement-help-button" href="#retirement-help"><i class="fa fa-question-circle"></i></a>
 
         <div class="row collapse">
           <div class="columns small-2 large-2">
@@ -54,4 +54,11 @@
     <% end %>
 
   </div>
+</div>
+
+<div id="income-help">
+</div>
+<div id="savings-help">
+</div>
+<div id="retirement-help">
 </div>
