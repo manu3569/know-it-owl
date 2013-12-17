@@ -29,6 +29,11 @@ describe FinancialInformation do
     it "returns the income from the financial information in cents" do
       expect(financial_information.income).to eq(income)
     end
+
+    it "is 0 by default" do
+      expect(FinancialInformation.new.income).to eq(0)
+    end
+
   end
 
 
@@ -39,6 +44,11 @@ describe FinancialInformation do
     it "returns the savings from the financial information in cents" do
       expect(financial_information.savings).to eq(savings)
     end
+
+    it "is 0 by default" do
+      expect(FinancialInformation.new.savings).to eq(0)
+    end
+
   end
 
 
@@ -49,6 +59,11 @@ describe FinancialInformation do
     it "returns the retirement from the financial information in cents" do
       expect(financial_information.retirement).to eq(retirement)
     end
+
+    it "is 0 by default" do
+      expect(FinancialInformation.new.retirement).to eq(0)
+    end
+
   end
 
 
@@ -59,6 +74,10 @@ describe FinancialInformation do
     it "gives the recommended life insurance based on financial information" do
       expect(financial_information.life_insurance_recommendation)
         .to eq(life_insurance_recommendation)
+    end
+
+    it "recommends 0 when all financial information is 0" do
+      expect(FinancialInformation.new.life_insurance_recommendation).to eq(0)
     end
 
   end

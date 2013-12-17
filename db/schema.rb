@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20131217003418) do
 
   create_table "financial_informations", force: true do |t|
-    t.integer  "income"
-    t.integer  "savings"
-    t.integer  "retirement"
+    t.integer  "income",     default: 0
+    t.integer  "savings",    default: 0
+    t.integer  "retirement", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
