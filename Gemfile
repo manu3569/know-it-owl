@@ -9,8 +9,13 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'foundation-rails'
 
-group :doc do
+#Heroku Required Gems:
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
+group :doc do
   gem 'sdoc', require: false
 end
 
@@ -31,3 +36,5 @@ group :test, :development do
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
 end
+
+ruby "2.0.0"
