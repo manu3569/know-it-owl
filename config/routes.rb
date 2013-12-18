@@ -1,4 +1,7 @@
 KnowItOwl::Application.routes.draw do
+
+  root 'financial_informations#new'
+
   resources :financial_informations
 
   # The priority is based upon order of creation: first created -> highest priority.
