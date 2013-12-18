@@ -52,6 +52,19 @@ $(function(){
   $('.form-section.active input').focus();
 
 
+  /* Submit form via AJAX */
+
+  $("#new_financial_information").on("submit", function(event) {
+    $.post("/financial_informations", $(this).serialize(), function(data){
+      recommendation = "You should get " + data.recommendation + " in life insurance";
+      $('#recommendation-modal h2').html(recommendation);
+      $('#recommendation-modal').foundation('reveal', 'open');
+    });
+    event.preventDefault();
+    return false;
+  });
+
+
 
   /*** Helper Functions ***/
 

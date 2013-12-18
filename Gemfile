@@ -37,4 +37,4 @@ group :test, :development do
   gem "guard-rspec"
 end
 
-ruby "2.0.0"
+# ruby "2.0.0"
