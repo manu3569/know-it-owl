@@ -64,7 +64,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.3)
     formatador (0.2.4)
-    foundation-rails (5.0.0.1)
+    foundation-rails (5.0.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     guard (2.2.5)
@@ -205,7 +205,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails
-  foundation-rails
+  foundation-rails (~> 5.0.2.0)
   guard (>= 2.1.0)
   guard-rspec
   jbuilder (~> 1.2)
